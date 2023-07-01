@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+            function compute(){
+                var flag=validateLoan(document.getElementById('loan').value);
+                var flag1=validateYear(document.getElementById('year').value);
+
+                if(flag && flag1){
+                    alert("in function");
+
+                    //calculate interest
+                }
+            }
+
+            function validateLoan(loan){
+                alert("in loan")
+                if(loan==="" || loan===NaN || loan>1500000){
+                    alert("invalid number");
+                    return false;
+                }else{
+                        return true;
+                }
+        
+            }
+            function validateYear(year){
+                alert("in year")
+                if(year==="" || year===NaN ){
+                    alert("invalid year");
+                    return false;
+                }else if(7>year || year>15){
+                    return false;
+                    alert("invalid range");
+                }else{
+                    return true;
+                }
+            }
+                
+            
+        </script>
+
+    </head>
+    <body>
+   
+        <h3>Enter Loan Information</h3>
+        <label for="loan">1)Amount of the loan(any currency):</label><input type="text" id="loan" name="loan"><br>   
+        2)Annual percentage rate of interest<input type="text" id="rate" name="rate"><br>
+        3)Repayment period in years:<input type="text" id="year" name="year"><br>
+         <input type="button" id="btn" name="btn" onclick="compute()" value="compute"><h3>Payment Information:</h3>
+         4)Your monthly payment will be:<input type="text" id="monthly" name="monthly" disabled><br>
+         5)Your total payment will be:<input type="text" id="payment" name="payment" disabled><br>
+         6)Your total interest payments will be:<input type="text" id="interest" name="interest" disabled><br>
+    </body>
+</html>

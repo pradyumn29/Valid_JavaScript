@@ -1,0 +1,98 @@
+<html>
+    <head>
+         <script>
+            function OrderDetails(){
+                var id=document.getElementById('order').value;
+                var nm=validateNm(document.getElementById('nm').value);
+                var dt=validateDt(document.getElementById('dt').value);
+                var dt1=validateDt1(document.getElementById('dt1').value);
+                var ttl=vvalidatettl(document.getElementById('totl').value);
+                   alert("in function");
+                   alert(id)
+
+                if(id && nm && dt && dt1 && ttl){
+                    alert("in if");
+                    var a=document.getElementById('order').value;
+                    var b=document.getElementById('nm').value;
+                     var c=document.getElementById('dt').value;
+                    var d=document.getElementById('dt1').value;
+                    var e=document.getElementById('totl').value;
+                        alert(e);
+                    document.getElementById('mydiv').innerHTML="order id"+a;
+                    document.getElementById('mydiv1').innerHTML="order id"+b;
+                    document.getElementById('mydiv2').innerHTML="order id"+c;
+                    document.getElementById('mydiv3').innerHTML="order id"+d;
+                    document.getElementById('mydiv4').innerHTML="order id"+e;
+
+
+                }
+                
+            }
+
+            function validateId(id){
+                    
+                if(id==="")
+                {
+                    alert('this is required field');
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+            function validateDt(dt){
+                    
+                    if(dt==="")
+                    {
+                        alert('this is required field');
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+                function validateDt1(dt1){
+                    
+                    if(dt1==="")
+                    {
+                        alert('this is required field');
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+                function vvalidatettl(ttl){
+                    
+                    if(ttl==="")
+                    {
+                        alert('this is required field');
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+            function validateNm(nm){
+                if(nm==="" || nm.length>6){
+                    alert('Name can not be empty')
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+         </script>
+    </head>
+    <body>
+        Order ID:<input type="text" id="order" name="order">
+        Cust name:<input type="text" id="nm" name="nm">
+        Enter billing Date:<input type="date" id="dt" name="dt">
+        Enter Shipping date:<input type="date" id="dt1" name="dt1">
+        Order Total:<input type="text" id="totl" name="totl">
+        <button type="button" id="btn" name="btn" onclick="OrderDetails()">submit</button>
+
+        <div id="mydiv"></div>
+        <div id="mydiv1"></div>
+        <div id="mydiv2"></div>
+        <div id="mydiv3"></div>
+        <div id="mydiv4"></div>
+    </body>
+  
+</html>
